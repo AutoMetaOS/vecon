@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { mkdirp, copy, dist } from './utils.js';
+import { mkdirp, copy, dist } from './lib/utils.js';
 
 export async function create ( cwd, options ) {
 	mkdirp( cwd );

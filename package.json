@@ -1,28 +1,25 @@
 {
 	"name": "vecon",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/AutoMetaOS/VECO"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.svelte.dev",
+	"homepage": "https://github.com/AutoMetaOS/VECO#README.md",
 	"bin": "./bin.js",
 	"main": "./index.js",
 	"dependencies": {
 		"kleur": "^4.1.4",
 		"prompts": "^2.4.2"
 	},
-	"devDependencies": {
-		"@playwright/test": "^1.22.2",
-		"uvu": "^0.5.3"
+	"scripts": {
+		"publish": "npm publish"
 	},
-	"scripts": {},
 	"files": [
 		"index.js",
-		"dist",
 		"bin.js",
-		"utils.js"
+		"lib/*"
 	],
 	"type": "module"
 }

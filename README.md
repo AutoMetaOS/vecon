@@ -7,19 +7,36 @@
 
 Based on [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)
 
+# Get
+```bash
+$ pnpm i -g vecon
+```
+# Run Order
+- version bump to `package.json`
+- `npm publish`
+- git add .
+- git commit -m "message from prompt"
+- git push
+
+# Usage
+For one shot version update and publish
+```json
+{
+  // package.json
+  "scripts":{
+    "prepublish": "<before VERSION BUMP(optional)>",
+    "vecon": "<SCRIPTS B/W VERSION BUMP & NPM PUBLISH(optional)>",
+    "publish":"vecon publish", // Follow Prompts
+    "postpublish": "<after NPM PUBLISH(optional)>"
+  }
+}
+```
+
+# TODO
+- Add vecon.config.json for config
+- Add options:
+- - "--no-git" to skip git commands
+- - "--no-ver" to skip version bump
+
 ## License
 [MIT](./LICENSE)
-
-
-$ npx ./ t1 t2 --f=2 --b cd
-```json
-[
-  "/usr/local/Cellar/node/18.3.0/bin/node",
-  "/Users/vivaldi/.npm/_npx/0b8db47756ca9f8c/node_modules/.bin/vecon",
-  "t1",
-  "t2",
-  "--f=2",
-  "--b",
-  "c"
-]
-```
