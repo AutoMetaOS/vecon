@@ -6,32 +6,30 @@ import prompts from 'prompts';
 // import { create } from './index.js';
 import { dist } from './utils.js';
 
-// prettier-ignore
-const disclaimer = `
-${ bold( cyan( 'Welcome to SvelteKit!' ) ) }
-
-${ bold( red( 'This is beta software; expect bugs and missing features.' ) ) }
-`;
-
 const { version } = JSON.parse( fs.readFileSync( new URL( 'package.json', import.meta.url ), 'utf-8' ) );
 
 async function main () {
-	console.log( gray( `\ncreate-svelte version ${ version }` ) );
-	console.log( disclaimer );
+	console.log( bold( cyan( 'Running VECOn! v' + version ) ) );
 
+	console.log(
+		process.argv,
+		process.argv[ 2 ]
+	);
 	let cwd = process.argv[ 2 ] || '.';
 
 	if ( cwd === '.' ) {
 		const opts = await prompts( [
 			{
 				type: 'text',
-				name: 'dir',
-				message: 'Where should we create your project?\n  (leave blank to use current directory)'
+				name: 'test',
+				message: 'is VECOn working?'
 			}
 		] );
 
-		if ( opts.dir )
+		if ( opts.dir ) {
+			console.log( 'VECOn is working!' );
 			cwd = opts.dir;
+		}
 	}
 
 	if ( fs.existsSync( cwd ) ) {
