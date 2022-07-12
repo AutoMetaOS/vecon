@@ -11,11 +11,7 @@ const { version } = JSON.parse( fs.readFileSync( new URL( 'package.json', import
 async function main () {
 	console.log( bold( cyan( 'Running VECOn! v' + version ) ) );
 
-	console.log(
-		process.argv,
-		process.argv[ 2 ]
-	);
-	let cwd = process.argv[ 2 ] || '.';
+	const [ name = ".", ...rest ] = process.argv.slice( 2 );
 
 	if ( cwd === '.' ) {
 		const opts = await prompts( [
@@ -85,22 +81,6 @@ async function main () {
 					type: 'toggle',
 					name: 'eslint',
 					message: 'Add ESLint for code linting?',
-					initial: false,
-					active: 'Yes',
-					inactive: 'No'
-				},
-				{
-					type: 'toggle',
-					name: 'prettier',
-					message: 'Add Prettier for code formatting?',
-					initial: false,
-					active: 'Yes',
-					inactive: 'No'
-				},
-				{
-					type: 'toggle',
-					name: 'playwright',
-					message: 'Add Playwright for browser testing?',
 					initial: false,
 					active: 'Yes',
 					inactive: 'No'
