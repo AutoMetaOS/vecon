@@ -5,11 +5,12 @@
   <h1>VE COn</h1>
 </div>
 
-Based on [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)
 
 # Get
+Based on [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte). Pronounced as "V-co" (the `n` is silent, Why? because why not)
+
 ```bash
-$ pnpm i -g vecon
+$ npm i -g vecon
 ```
 # Run Order
 - version bump to `package.json`
@@ -19,7 +20,7 @@ $ pnpm i -g vecon
 - git push
 
 # Usage
-For one shot version update and publish
+For one shot version update and publish/deploy
 ```json
 {
   // package.json
@@ -33,10 +34,11 @@ For one shot version update and publish
 ```
 
 # TODO
-- Add vecon.config.json for config
+- Add `deploy` Script
+- Add `vecon.config.json` for config
 - Add options:
-- - "--no-git" to skip git commands
-- - "--no-ver" to skip version bump
+- - `--no-git` to skip git commands
+- - `--no-ver` to skip version bump
 
 ## License
 [MIT](./LICENSE)
